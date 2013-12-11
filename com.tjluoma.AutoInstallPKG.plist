@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.tjluoma.AutoInstallPKG</string>
+	<key>LowPriorityIO</key>
+	<true/>
+	<key>Nice</key>
+	<integer>10</integer>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/bin/env</string>
+		<string>autopkginstall.sh</string>
+	</array>
+	<key>QueueDirectories</key>
+	<array>
+		<string>/Users/luomat/Action/AutoInstallPKG</string>
+	</array>
+	<key>StandardErrorPath</key>
+	<string>/tmp/AutoInstallPKG.errors.log</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/AutoInstallPKG.log</string>
+	<key>ThrottleInterval</key>
+	<integer>60</integer>
+</dict>
+</plist>
