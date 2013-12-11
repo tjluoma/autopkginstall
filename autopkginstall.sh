@@ -63,7 +63,7 @@ do
 
 	case "$EXT" in
 		pkg|mpkg)
-					log "Installing "$line"
+					log "Installing $line"
 					sudo installer -verboseR -pkg "$line" -target / -lang en 2>&1 | tee -a "$LOG"
 
 					EXIT="$?"
