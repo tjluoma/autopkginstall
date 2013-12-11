@@ -15,12 +15,15 @@ DIR="$HOME/Action/AutoInstallPKG"
 	# where do you want files to be moved after they are installed
 SUCCESS_MOVE_TO="$HOME/.Trash/"
 
+zmodload zsh/datetime
+
+TIME=$(strftime "%Y-%m-%d--%H.%M.%S" "$EPOCHSECONDS")
 
 	# where do you want files to be moved if they FAIL to be installed
 ERROR_MOVE_TO="$HOME/Desktop/"
 
 	# log our output here
-LOG="$HOME/Library/Logs/AutoInstallPKG.log"
+LOG="$HOME/Library/Logs/AutoInstallPKG.$TIME.log"
 
 	# quick function to
 log () {
@@ -87,6 +90,27 @@ do
 		;;
 	esac
 done
+
+REBOOT=no
+
+fgrep -q 'installer: The install recommends restarting now.' "$LOG" && REBOOT=should
+
+fgrep -q 'installer: The install requires restarting now.'   "$LOG" && REBOOT=must
+
+case "$REBOOT" in
+	must)
+			log "You MUST reboot to complete installation!"
+	;;
+
+	should)
+			log "You should reboot to complete installation!"
+	;;
+
+	no)
+			log "No reboot required"
+	;;
+
+esac
 
 
 exit
