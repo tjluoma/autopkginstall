@@ -43,3 +43,11 @@ Other informational messages may be saved to `/tmp/AutoInstallPKG.log`
 
 If you do not want to use /tmp/ for those files, edit the `com.tjluoma.AutoInstallPKG.plist` file accordingly.
 
+## Warranty ##
+
+Absolutely None. Zero. Zilch. Nada.
+
+If the laws where you live do not allow for me to deny any responsibility for this, then you are not allowed to use it.
+
+(That being said, I'm using this myself and haven't have any problems. YMMV. Use at your own risk. If it breaks, you get to keep both pieces.)
+
